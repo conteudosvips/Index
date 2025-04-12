@@ -1,47 +1,1123 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obrigado!</title>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Conteúdo exclusivos</title>
     <style>
-        body {
-            background-color: #111;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-
-        h1 {
-            color: #ff0000;
-            font-size: 2.5em;
-        }
-
-        .content {
-            background-color: #222;
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 20px;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .content p {
-            font-size: 1.2em;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+      body {
+        background: #0e0e0e;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+      .cta {
+        background: #ff0000;
+        color: #fff;
+        padding: 15px;
+        margin: 20px 0;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .blurred-img {
+        width: 100%;
+        height: 400px;
+        background: url('8.jpg') center/cover no-repeat;
+        filter: blur(2px);
+        margin-bottom: 20px;
+      }
+      
+      .warning {
+        color: #2E7D32;
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
-    <h1>Obrigado por enviar os seus dados!</h1>
-    <div class="content">
-        <p>Seu formulário foi enviado com sucesso.</p>
-        <p>Você receberá o conteúdo conforme o método escolhido.</p>
-        <p><strong>Pague agora no Pix e receba o conteúdo na hora!</strong></p>
-    </div>
-</body>
+    <!-- Inclua isso no <head> do seu HTML -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<style>
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .preco-pulsando {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    background-color: #e60000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    animation: pulse 1s infinite;
+    display: inline-block;
+    text-align: center;
+  }
+  @keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px#FF0000, 0 0 20px #FF0000;
+  }
+  50% {
+    box-shadow: 0 0 20px #FF0000, 0 0 40px #FF0000;
+  }
+}
+
+.pix-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pix-chave {
+  background-color: #000;
+  color: #ff0000;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border-right: 2px solid #ff0000;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite, neonPulse 2s infinite;
+}
+
+.copiar-btn {
+  padding: 10px 15px;
+  background-color: #ffffff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.copiar-btn:hover {
+  background-color: #ffffff;
+}
+@keyframes shakeGlow {
+  0%, 100% {
+    transform: translateX(0);
+    text-shadow: 0 0 10px red, 0 0 20px red;
+  }
+  25% {
+    transform: translateX(-3px);
+    text-shadow: 0 0 5px #ff0000;
+  }
+  50% {
+    transform: translateX(3px);
+    text-shadow: 0 0 15px #ff0000;
+  }
+  75% {
+    transform: translateX(-2px);
+    text-shadow: 0 0 8px #ff0000;
+  }
+}
+
+.frase-destaque {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background-color: #ff0000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  animation: shakeGlow 1s infinite;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pix-convert-button {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff, #FF0000);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .pix-convert-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: skewX(-20deg);
+    z-index: 1;
+    animation: shine 2s infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      left: -75%;
+    }
+    50% {
+      left: 125%;
+    }
+    100% {
+      left: 125%;
+    }
+  }
+    .pix-neon-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FF0000;
+    text-shadow:
+      0 0 5px #FF0000,
+      0 0 10px #FF0000,
+      0 0 20px #FF0000,
+      0 0 40px #FF0000;
+    animation: neonGlow 2s ease-in-out infinite;
+    text-align: center;
+  }
+
+  @keyframes neonGlow {
+    0%, 100% {
+      text-shadow:
+        0 0 5px #FF0000,
+        0 0 10px #FF0000,
+        0 0 20px #FF0000,
+        0 0 40px #FF0000;
+    }
+    50% {
+      text-shadow:
+        0 0 2px #FF0000,
+        0 0 6px #FF0000,
+        0 0 12px #FF0000,
+        0 0 25px #ffffff;
+    }
+    
+  }
+ .pix-info-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px; 
+ }
+
+  .qrcode-container {
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    animation: pulse 2s infinite;
+    display: inline-block;
+  }
+
+  .qrcode-container iframe {
+    border: none;
+    width: 300px;
+    height: 300px;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(0, 150, 136, 0.3);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(0, 150, 136, 0.5);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(0, 150, 136, 0.3);
+    }
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+    /* Importando a fonte Montserrat */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+  /* Estilo geral para os benefícios */
+  .beneficio {
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif; /* Usando a fonte Montserrat */
+    font-size: 18px;
+    color: #fff; /* Texto branco */
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: aparecer 0.5s ease forwards, neonGlow 1.5s ease-in-out infinite alternate; /* Animação de aparecimento e neon */
+  }
+
+  /* Animação de aparecimento */
+  @keyframes aparecer {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Efeito Neon vermelho */
+  @keyframes neonGlow {
+    0% {
+      text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
+    }
+    50% {
+      text-shadow: 0 0 5px #ff5733, 0 0 10px #ff5733, 0 0 15px #ff5733, 0 0 20px #ff5733;
+    }
+    100% {
+      text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
+    }
+  }
+
+  /* Animações para cada item de benefício com delay */
+  .beneficio:nth-of-type(1) { animation-delay: 0.1s; }
+  .beneficio:nth-of-type(2) { animation-delay: 0.3s; }
+  .beneficio:nth-of-type(3) { animation-delay: 0.5s; }
+
+  /* Estilo do ícone de check */
+  .check {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #fff; /* Ícone de check em branco */
+  }
+
+  .check {
+    color: red;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    animation: neon 1.2s ease-in-out infinite alternate;
+    text-shadow:
+      0 0 5px red,
+      0 0 10px red,
+      0 0 15px red,
+      0 0 20px red;
+  }
+
+  @keyframes aparecer {
+    from {
+      transform: translateX(-15px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes neon {
+    from {
+      text-shadow:
+        0 0 5px red,
+        0 0 10px red,
+        0 0 15px red,
+        0 0 20px red;
+    }
+    to {
+      text-shadow:
+        0 0 2px #ff4d4d,
+        0 0 6px #ff4d4d,
+        0 0 10px #ff4d4d,
+        0 0 14px #ff4d4d;
+    }
+  }
+.pix-neon-box {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
+
+
+.pix-neon-box h2 {
+  color: #ff0000;
+  font-size: 24px;
+  text-shadow: 0 0 10px #ff0000;
+  margin-bottom: 15px;
+}
+
+.pix-neon-box p {
+  font-size: 18px;
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+  margin-bottom: 20px;
+}
+
+.pix-neon-box button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  transition: 0.3s;
+}
+
+.pix-neon-box button:hover {
+  background-color: #cc0000;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+@keyframes pulseNeon {
+  0%, 100% {
+    box-shadow: 0 0 10px #ff0000, inset 0 0 5px #ff0000;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff3333, inset 0 0 15px #ff3333;
+  }
+}
+.copy-instruction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  animation: textAnimation 3s infinite;
+}
+
+.instruction-text {
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px #fff;
+}
+
+.google-icon {
+  width: 25px;
+  height: 25px;
+  animation: iconAnimation 3s infinite;
+}
+
+@keyframes textAnimation {
+  0%, 100% {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff5555;
+  }
+  50% {
+    color: #ff5555;
+    text-shadow: 0 0 20px #ff0000, 0 0 30px #ff5555;
+  }
+}
+
+@keyframes iconAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+  .liberar-btn {
+    background-color: #ff0000;
+    border: none;
+    padding: 18px 38px;7u
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px #ff0000;
+  }
+
+  .liberar-btn:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+  }
+
+  .mensagem-desconto {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .mensagem-desconto.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .parabens-texto {
+    font-size: 22px;
+    color: #ff4d4d;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 0 10px #ff4d4d;
+    animation: neonPulse 1.5s ease-in-out infinite alternate;
+  }
+
+  .preco-texto {
+    font-size: 34px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    margin-top: 10px;
+    animation: aparecerZoom 1s ease forwards;
+    text-shadow: 0 0 8px #ff0000;
+  }
+
+  @keyframes neonPulse {
+    from {
+      text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d;
+    }
+    to {
+      text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+    }
+  }
+
+  @keyframes aparecerZoom {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+.pix-key {
+  font-size: 16px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin: 10px 0 0 0;
+  line-height: 1.4;
+}
+..pix-box {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.pix-box a {
+  color: #00ffcc; /* ou qualquer cor que combine */
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  display: inline-block;
+  max-width: 100%;
+}
+.instrucoes {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 5px #ff0000;
+}
+  .pix-neon-box {
+    text-align: center;
+    background: #111;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #ff000088;
+    margin: 30px auto;
+    max-width: 400px;
+  }
+
+  .neon-title {
+    color: #ff0000;
+    text-shadow: 0 0 8px #ff0000, 0 0 15px #ff0000;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .instrucoes {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 4px #ff0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .neon-text {
+    background: #222;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: inline-block;
+    box-shadow: 0 0 10px #ff0000aa;
+    font-size: 16px;
+  }
+
+  .neon-button {
+    background: #ff0000;
+    color: white;
+    border: none;
+    padding: 14px 26px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ff0000cc;
+    transition: all 0.3s ease;
+  }
+
+  .neon-button:hover {
+    background: #ff3333;
+    box-shadow: 0 0 25px #ff0000;
+  }
+
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 10px #ff0000;
+    }
+    50% {
+      box-shadow: 0 0 20px #ff0000aa, 0 0 30px #ff000055;
+    }
+    100% {
+      box-shadow: 0 0 10px #ff0000;
+    }
+  }
+
+  .copy-message {
+    margin-top: 15px;
+    color: #00ff00;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .copy-message.show {
+    opacity: 1;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+  </head>
+  <body>
+<audio id="audioWelcome" autoplay style="display: none;">
+  <source src="1_5073500650352936669.ogg" type="audio/ogg">
+  Seu navegador não suporta áudio.
+</audio>
+
+<!-- Inclui a fonte Montserrat do Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+<h1 class="frase-destaque">Conteúdos Exclusivos e de Qualidade</h1>
+
+<!-- Fonte bonita do Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<div class="beneficio"><span class="check">✔</span> Os melhores conteúdos+18 das famosas</div>
+<div class="beneficio"><span class="check">✔</span>As melhores Novinhas da net</div>
+<div class="faixa-diabinho">
+  <div class="conteudo-animado">
+    😈 Videos Chamadas, lives ao vivo, avaliações, com muitas fotos e videos🔥
+😈
+  </div>
+</div>
+
+<style>
+.faixa-diabinho {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+  color: #ff0000aa;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.conteudo-animado {
+  display: inline-block;
+  padding-left: 100%;
+  animation: deslizar 15s linear infinite;
+}
+
+@keyframes deslizar {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+</style>
+
+
+    <div class="blurred-img"></div>
+    <p style="font-family: 'Montserrat', sans-serif; font-size: 18px;">
+  Vídeos amadores + packs completos das melhores novinha da net!
+</p>
+    <!-- Coloque isso onde quiser exibir o preço -->
+<!-- Botão -->
+<button id="liberarBtn" class="liberar-btn" onclick="mostrarConteudo()">LIBERAR CONTEÚDO</button>
+
+
+<!-- Mensagem escondida -->
+<div id="mensagem" class="mensagem-desconto" style="display: none;">
+  <p class="parabens-texto">Parabéns, você ganhou um desconto de 30%</p>
+  <p class="preco-texto">R$ 9,90<br> Somente Hoje</p>
+</div>
+
+
+<div class="pix-neon-box">
+  <h2 class="neon-title">Chave Pix Segura</h2>
+
+  <div class="instrucoes">
+    <span class="icon">💡</span>
+    Copie a chave Pix abaixo e cole no seu navegador Google para liberar o conteúdo.
+  </div>
+
+  <p id="pixKey" class="neon-text">https://livepix.gg/conteudosvips</p>
+
+  <button onclick="copyPixKey()" id="copyBtn" class="neon-button pulse">
+    Copiar Pix
+  </button>
+
+  <p id="copyMessage" class="copy-message">Chave copiada com sucesso!</p>
+</div>
+<form class="form-entrega" onsubmit="event.preventDefault(); mostrarMensagemFinal();">
+  <label for="metodoEntrega">Por onde você quer receber o conteúdo?</label>
+  <select id="metodoEntrega" name="Método de Entrega" onchange="mostrarCampoEntrega()">
+    <option value="">Selecione</option>
+    <option value="WhatsApp">WhatsApp</option>
+    <option value="Instagram">Instagram</option>
+    <option value="Email">E-mail</option>
+  </select>
+
+  <div id="campoWhatsapp" class="campo hidden">
+    <label>Seu número de WhatsApp:</label>
+    <input type="text" name="WhatsApp" placeholder="(99) 99999-9999">
+  </div>
+
+  <div id="campoInstagram" class="campo hidden">
+    <label>Seu @ do Instagram:</label>
+    <input type="text" name="Instagram" placeholder="@seuusuario">
+  </div>
+
+  <div id="campoEmail" class="campo hidden">
+    <label>Seu e-mail:</label>
+    <input type="email" name="Email" placeholder="exemplo@email.com">
+  </div>
+
+  <button type="submit" class="botao-enviar">ENVIAR</button>
+</form>
+
+<!-- MENSAGEM FINAL -->
+<div id="mensagemFinal" class="mensagem-final hidden">
+  <div class="mensagem-texto">
+    <span class="emoji-fogo">🔥</span>
+    <span class="emoji-fogo">🔥</span>
+    <span class="neon-texto"><h2 class="pix-neon-text">
+  Pague agora no Pix e receba o conteúdo na hora!
+</h2></span>
+    <span class="emoji-fogo">🔥</span>
+    <span class="emoji-fogo">🔥</span>
+  </div>
+  <div class="emoji-subindo">🚀</div>
+</div>
+
+<style>
+  body {
+    background: #111;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .form-entrega {
+    background: #1a1a1a;
+    border: 1px solid #ff0000;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 360px;
+    margin: 30px auto;
+    box-shadow: 0 0 10px #ff000066;
+  }
+
+  .form-entrega label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .form-entrega select,
+  .form-entrega input {
+    width: 100%;
+    padding: 10px;
+    background: #222;
+    color: #fff;
+    border: 1px solid #ff0000;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .botao-enviar {
+    background: linear-gradient(90deg, #ff1a1a, #cc0000);
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .botao-enviar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff0000aa;
+  }
+
+  .campo {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* MENSAGEM FINAL */
+  .mensagem-final {
+    text-align: center;
+    padding: 40px 10px;
+    animation: fadeIn 1.2s ease-in-out;
+    color: #fff;
+  }
+
+  .neon-texto {
+    font-size: 20px;
+    color: #ff1a1a;
+    text-shadow: 0 0 5px #ff1a1a, 0 0 10px #ff1a1a, 0 0 20px #ff1a1a, 0 0 40px #ff0000;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 1.6;
+  }
+
+  .emoji-fogo {
+    animation: fogoBrilho 1.5s infinite;
+    font-size: 24px;
+    margin: 0 3px;
+  }
+
+  @keyframes fogoBrilho {
+    0%, 100% { filter: drop-shadow(0 0 5px orange); transform: scale(1); }
+    50% { filter: drop-shadow(0 0 12px red); transform: scale(1.2); }
+  }
+
+  .emoji-subindo {
+    font-size: 38px;
+    animation: subirRocket 2s ease-in-out forwards;
+    margin-top: 25px;
+  }
+
+  @keyframes subirRocket {
+    0% { transform: translateY(0); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  function mostrarCampoEntrega() {
+    const metodo = document.getElementById('metodoEntrega').value;
+    document.querySelectorAll('.campo').forEach(c => c.classList.add('hidden'));
+
+    if (metodo === 'WhatsApp') {
+      document.getElementById('campoWhatsapp').classList.remove('hidden');
+    } else if (metodo === 'Instagram') {
+      document.getElementById('campoInstagram').classList.remove('hidden');
+    } else if (metodo === 'Email') {
+      document.getElementById('campoEmail').classList.remove('hidden');
+    }
+  }
+
+  function mostrarMensagemFinal() {
+    document.getElementById("mensagemFinal").classList.remove("hidden");
+  }
+</script>
+
+    <p class="pix-info-text">
+  Envie o comprovante para: 
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+       viewBox="0 0 448 512" style="vertical-align: middle; margin-right: 6px;">
+    <path fill="#25D366" d="M380.9 97.1C339-2.3 231.2-32.1 141.1 9.6S9.5 231.2 51.1 321.3c10.7 23.4 25.9 44.7 44.7 62.6l-29.5 87.2 89.1-29.4c19.6 10.4 41.3 18 64 21.6 89.3 14.7 177.3-30.9 210.4-116.8s4.7-180.1-48.9-249.4zm-156.5 322c-20.9 0-41.7-5.5-60.2-15.8l-8.6-5.1-52.9 17.5 17.5-51.2-5.6-9c-17.7-28.6-26.3-61.2-24.2-94.5 5.8-91.9 82.6-164.1 174.5-158.2 91.9 5.8 164.1 82.6 158.2 174.5-5.5 86.4-76.6 152.9-162.7 152.9zM313.8 290c-4.6-2.3-27.4-13.5-31.7-15s-7.3-2.3-10.4 2.3-11.9 15-14.5 18.1-5.3 3.4-9.9 1.1-19.4-7.2-37-22.8c-13.7-12.3-22.8-27.6-25.5-32.2s-0.3-7.2 1.7-9.5c1.7-2.1 4.6-5.4 6.8-8.1 2.3-2.7 3-4.6 4.6-7.6s0.8-5.7-0.4-8.1-10.4-25-14.2-34.2c-3.7-8.8-7.5-7.6-10.4-7.7-2.7-0.1-5.7-0.1-8.8-0.1s-8.1 1.1-12.4 5.7-16.2 15.9-16.2 38.8 16.6 45 18.9 48.1 32.6 49.8 79.1 69.9c11 4.8 19.6 7.7 26.3 9.9 11 3.5 21 3 28.9 1.8 8.8-1.3 27.4-11.2 31.3-22 3.9-10.8 3.9-20 2.8-21.9-1.2-1.9-4.2-3-8.8-5.3z"/>
+  </svg>
+4797564469
+</p>
+<!-- Faixa de depoimento animada -->
+<div class="carrossel-depoimento">
+  <div class="depoimento" id="depoimentoAtivo">
+    <img id="fotoPerfil" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de perfil">
+    <p id="textoDepoimento">"Nunca vi algo assim. Isso sim é conteúdo de verdade."</p>
+  </div>
+</div>
+
+<!-- Estilo ajustado -->
+<style>
+.carrossel-depoimento {
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  background-color: #330000;
+  color: #ffcccc;
+  border-radius: 10px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.3);
+  margin: auto;
+  overflow: hidden;
+}
+
+.carrossel-depoimento img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.depoimento {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeInOut 4s infinite;
+  width: 100%;
+}
+
+.depoimento p {
+  font-size: 11.5px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-20px); }
+  10% { opacity: 1; transform: translateX(0); }
+  60% { opacity: 1; }
+  90% { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 0; }
+}
+</style>
+
+<!-- Script com vários depoimentos -->
+<script>
+const depoimentos = [
+  {
+    texto: '"Nunca vi algo assim. Isso sim é conteúdo de verdade."',
+    foto: 'https://randomuser.me/api/portraits/men/32.jpg'
+  },
+  {
+    texto: '"Sério, me surpreendeu demais."',
+    foto: 'https://randomuser.me/api/portraits/men/12.jpg'
+  },
+  {
+    texto: '"Melhor conteúdo que já encontrei na internet."',
+    foto: 'https://randomuser.me/api/portraits/men/85.jpg'
+  },
+  {
+    texto: '"Tô viciado. Vale cada centavo!"',
+    foto: 'https://randomuser.me/api/portraits/men/63.jpg'
+  },
+  {
+    texto: '"Nunca pensei que seria tão bom assim."',
+    foto: 'https://randomuser.me/api/portraits/men/44.jpg'
+  },
+  {
+    texto: '"Isso sim é diversão de verdade."',
+    foto: 'https://randomuser.me/api/portraits/men/18.jpg'
+  },
+  {
+    texto: '"Top demais, recomendo de olhos fechados."',
+    foto: 'https://randomuser.me/api/portraits/men/29.jpg'
+  }
+];
+
+let index = 0;
+setInterval(() => {
+  index = (index + 1) % depoimentos.length;
+  document.getElementById("textoDepoimento").textContent = depoimentos[index].texto;
+  document.getElementById("fotoPerfil").src = depoimentos[index].foto;
+}, 4000);
+</script>
+
+    <p class="warning">Seu pagamento está 100% seguro conosco garantido por tecnologia de ponta e criptografia avançada.</p>
+    <script>
+  function copiarPix() {
+    const chave = document.getElementById("chavePix").textContent;
+    navigator.clipboard.writeText(chave).then(() => {
+      alert("Chave PIX copiada!");
+    });
+  }
+
+  function copyPixKey() {
+    const key = document.getElementById("pixKey").innerText;
+    navigator.clipboard.writeText(key).then(() => {
+      alert("Chave Pix colada com sucesso!");
+    }).catch(() => {
+      alert("Erro ao copiar a chave Pix.");
+    });
+  }
+document.getElementById("liberarBtn").addEventListener("click", function () {
+    const msg = document.getElementById("mensagem");
+    msg.classList.add("show");
+  });
+
+  function mostrarConteudo() {
+    const mensagem = document.getElementById("mensagem");
+    const botao = document.getElementById("liberarBtn");
+
+    mensagem.style.display = "block";
+    botao.style.display = "none";
+
+    mensagem.scrollIntoView({ behavior: "smooth" });
+
+    dispararFogos();
+  }
+
+  function dispararFogos() {
+    const canvas = document.createElement("canvas");
+    canvas.id = "canvasFogos";
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext("2d");
+    canvas.style.position = "fixed";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.pointerEvents = "none";
+    canvas.style.zIndex = "9999";
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: canvas.width / 2,
+        y: canvas.height / 2,
+        radius: Math.random() * 3 + 1,
+        color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+        speedX: Math.random() * 10 - 5,
+        speedY: Math.random() * 10 - 5,
+        alpha: 1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((p, i) => {
+        ctx.globalAlpha = p.alpha;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+        p.alpha -= 0.02;
+
+        if (p.alpha <= 0) {
+          particles.splice(i, 1);
+        }
+      });
+
+      if (particles.length > 0) {
+        requestAnimationFrame(animate);
+      } else {
+        canvas.remove();
+      }
+    }
+
+    animate();
+  }
+
+
+// Força o autoplay mesmo com restrições
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('audioWelcome');
+    audio.play().catch(() => {
+      document.addEventListener('click', () => audio.play(), { once: true });
+    });
+  });
+function copyPixKey() {
+    const chave = document.getElementById("pixKey").innerText;
+    const msg = document.getElementById("copyMessage");
+    const btn = document.getElementById("copyBtn");
+
+    navigator.clipboard.writeText(chave).then(() => {
+      msg.classList.add("show");
+      btn.innerText = "Copiado!";
+      setTimeout(() => {
+        msg.classList.remove("show");
+        btn.innerText = "Copiar Pix";
+      }, 2000);
+    }).catch(err => {
+      alert("Erro ao copiar: " + err);
+    });
+  }
+
+</script>
+
+  </body>
 </html>
